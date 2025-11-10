@@ -53,10 +53,12 @@ import vpsLogo from './assets/education_logo/pic10.png';
 // ==============================
 // PROJECT SECTION LOGOS
 // ==============================
-import githubdetLogo from './assets/work_logo/p1tube.png';
-import csprepLogo from './assets/work_logo/p4chat.png';
-import movierecLogo from './assets/work_logo/p5webBuilder.png';
-import npmLogo from './assets/work_logo/p3shop.png';
+import WetubeLogo from './assets/work_logo/p1tube.png';
+import LucyAILogo from './assets/work_logo/p5webbuilder.png';
+import ShoplxLogo from './assets/work_logo/p3shop.png';
+import IchatsLogo from './assets/work_logo/p4chat.png';
+import WebBuilderAILogo from './assets/work_logo/p5webbuilder.png';
+import ShortlinkerLogo from './assets/work_logo/p6shortlinker.png';
 
 // ==============================
 // SKILLS INFORMATION
@@ -394,7 +396,7 @@ export const projects = [
     subtitle: "Intelligent AI Assistant",
     description: "A sophisticated AI-powered assistant built with React.js and Node.js, integrated with Gemini AI for intelligent responses. Features natural language processing, context awareness, and multi-modal interactions.",
     fullDescription: "LucyAI is an advanced conversational agent that leverages cutting-edge AI technology to provide intelligent assistance. The application features real-time chat, context preservation, and the ability to handle complex queries across various domains including coding, research, and general knowledge.",
-    image: npmLogo,
+    image: LucyAILogo,
     tags: ["React JS", "Node.js", "Express.js", "NPM", "Validation", "Gemini AI", "WebSocket"],
     technologies: ["React", "Node.js", "Express", "Gemini API", "Socket.io", "JWT"],
     features: [
@@ -418,7 +420,7 @@ export const projects = [
     subtitle: "AI-Powered Website Builder",
     description: "An innovative platform that uses artificial intelligence to generate and customize websites automatically. Users can describe their requirements and the AI builds responsive, modern websites in minutes.",
     fullDescription: "WebBuilderAI revolutionizes website creation by leveraging AI to understand user requirements and generate complete, responsive websites. The platform supports various templates, custom styling, and automatic optimization for different devices and platforms.",
-    image: npmLogo,
+    image: WebBuilderAILogo,
     tags: ["React JS", "Node.js", "Express.js", "AI Integration", "Responsive Design", "Automation"],
     technologies: ["React", "Node.js", "OpenAI API", "CSS3", "MongoDB", "Cloudinary"],
     features: [
@@ -441,7 +443,7 @@ export const projects = [
     subtitle: "E-commerce Platform",
     description: "A full-featured Amazon clone with product listings, shopping cart, user authentication, and payment integration. Built with modern React patterns and state management.",
     fullDescription: "This Amazon clone replicates core e-commerce functionality including user registration, product browsing, detailed product pages, shopping cart management, wishlist, and simulated checkout process. The application demonstrates advanced React patterns and clean architecture.",
-    image: githubdetLogo,
+    image: ShoplxLogo,
     tags: ["HTML", "CSS", "JavaScript", "React JS", "API Integration", "State Management"],
     technologies: ["React", "Context API", "CSS3", "Fake Store API", "Local Storage"],
     features: [
@@ -464,7 +466,7 @@ export const projects = [
     subtitle: "Video Streaming Platform",
     description: "A YouTube clone featuring video playback, channel subscriptions, comments, and personalized recommendations. Integrated with YouTube API for real content.",
     fullDescription: "This YouTube clone provides a seamless video streaming experience with features like video playback, channel management, comment system, and personalized recommendations. The UI closely mimics YouTube's design while adding unique features.",
-    image: csprepLogo,
+    image: WetubeLogo,
     tags: ["React JS", "Node.js", "MongoDB", "Express", "YouTube API", "Responsive Design"],
     technologies: ["React", "Node.js", "MongoDB", "Express", "YouTube Data API", "JWT"],
     features: [
@@ -487,7 +489,7 @@ export const projects = [
     subtitle: "URL Shortening Service",
     description: "A custom URL shortener service with analytics, custom slugs, and QR code generation. Tracks click analytics and provides detailed insights.",
     fullDescription: "Short Linker is a comprehensive URL shortening platform that allows users to create custom short links, track click analytics, generate QR codes, and manage their links through an intuitive dashboard.",
-    image: movierecLogo,
+    image: ShortlinkerLogo,
     tags: ["React JS", "API", "URL Shortening", "Analytics", "QR Codes", "Dashboard"],
     technologies: ["React", "Node.js", "MongoDB", "Chart.js", "QR Code Generator"],
     features: [
@@ -510,7 +512,7 @@ export const projects = [
     subtitle: "Real-time Messaging App",
     description: "A real-time messaging application with chat rooms, media sharing, and online status. Built with modern web technologies for seamless communication.",
     fullDescription: "This WhatsApp clone provides real-time messaging functionality with features like individual and group chats, media sharing, online status, message reactions, and push notifications.",
-    image: npmLogo,
+    image: IchatsLogo,
     tags: ["React JS", "Node.js", "Real-time", "WebSocket", "Media Sharing", "Authentication"],
     technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Cloudinary", "JWT"],
     features: [
@@ -522,7 +524,7 @@ export const projects = [
       "Push notifications"
     ],
     github: "https://github.com/dhirajyadav91/Ichat-f",
-    webapp: "https://ichat-f.vercel.app",
+    webapp: "https://ichat-f-c1yq.vercel.app",
     status: "Completed",
     category: "Communication",
     year: 2024

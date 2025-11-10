@@ -54,10 +54,10 @@ import vpsLogo from './assets/education_logo/pic10.png';
 // PROJECT SECTION LOGOS
 // ==============================
 import WetubeLogo from './assets/work_logo/p1tube.png';
-import LucyAILogo from './assets/work_logo/p5webbuilder.png';
+import LucyAILogo from './assets/work_logo/p5webBuilder.png';
 import ShoplxLogo from './assets/work_logo/p3shop.png';
 import IchatsLogo from './assets/work_logo/p4chat.png';
-import WebBuilderAILogo from './assets/work_logo/p5webbuilder.png';
+import WebBuilderAILogo from './assets/work_logo/p5webBuilder.png';
 import ShortlinkerLogo from './assets/work_logo/p6shortlinker.png';
 
 // ==============================

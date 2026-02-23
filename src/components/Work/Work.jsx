@@ -1,13 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useInView, useScroll, useTransform } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { projects } from "../../constants";
-import { 
-  FiGithub, 
-  FiExternalLink, 
-  FiX, 
+import {
+  FiGithub,
+  FiExternalLink,
+  FiX,
   FiCode,
   FiLayers,
-  FiStar,
   FiEye,
   FiFilter,
   FiChevronRight,
@@ -17,11 +16,8 @@ import {
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [filter, setFilter] = useState("All");
-  const [hoveredProject, setHoveredProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, threshold: 0.1 });
-
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
@@ -34,8 +30,8 @@ const Work = () => {
   const categories = ["All", ...new Set(projects.flatMap(project => project.category))];
 
   // Filter projects based on selected category
-  const filteredProjects = filter === "All" 
-    ? projects 
+  const filteredProjects = filter === "All"
+    ? projects
     : projects.filter(project => project.category === filter);
 
   const handleOpenModal = (project) => {
@@ -51,7 +47,7 @@ const Work = () => {
 
   const nextImage = () => {
     if (selectedProject.images) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         prev === selectedProject.images.length - 1 ? 0 : prev + 1
       );
     }
@@ -59,7 +55,7 @@ const Work = () => {
 
   const prevImage = () => {
     if (selectedProject.images) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         prev === 0 ? selectedProject.images.length - 1 : prev - 1
       );
     }
@@ -69,7 +65,7 @@ const Work = () => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!selectedProject) return;
-      
+
       if (e.key === 'Escape') handleCloseModal();
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
@@ -77,6 +73,7 @@ const Work = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedProject, currentImageIndex]);
 
   const containerVariants = {
@@ -90,8 +87,8 @@ const Work = () => {
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 60,
       scale: 0.8
     },
@@ -107,12 +104,12 @@ const Work = () => {
   };
 
   const modalVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       scale: 0.8,
       rotateX: 15
     },
-    visible: { 
+    visible: {
       opacity: 1,
       scale: 1,
       rotateX: 0,
@@ -133,8 +130,8 @@ const Work = () => {
 
   const imageVariants = {
     hidden: { opacity: 0, scale: 1.1 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.6,
@@ -145,7 +142,7 @@ const Work = () => {
 
   return (
     <section
-      id="work"
+      id="projects"
       ref={sectionRef}
       className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
     >
@@ -189,19 +186,19 @@ const Work = () => {
         />
       </div>
 
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto relative z-10"
         style={{ opacity, scale }}
       >
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -210,27 +207,27 @@ const Work = () => {
           >
             Featured Projects
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           />
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            A collection of my recent work showcasing full-stack development, 
+            A collection of my recent work showcasing full-stack development,
             modern design patterns, and innovative solutions
           </motion.p>
         </motion.div>
 
         {/* Filter Buttons */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap justify-center gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -241,11 +238,10 @@ const Work = () => {
             <motion.button
               key={category}
               onClick={() => setFilter(category)}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border backdrop-blur-sm ${
-                filter === category
-                  ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white border-transparent shadow-lg shadow-purple-500/25"
-                  : "bg-slate-800/50 text-gray-300 border-slate-700 hover:bg-slate-700/50 hover:text-white"
-              }`}
+              className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border backdrop-blur-sm ${filter === category
+                ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white border-transparent shadow-lg shadow-purple-500/25"
+                : "bg-slate-800/50 text-gray-300 border-slate-700 hover:bg-slate-700/50 hover:text-white"
+                }`}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -263,154 +259,141 @@ const Work = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="group relative"
-              onHoverStart={() => setHoveredProject(project.id)}
-              onHoverEnd={() => setHoveredProject(null)}
+              className="group relative h-full"
             >
-              {/* Project Card */}
-              <motion.div
-                className="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl hover:shadow-3xl transition-all duration-500 cursor-pointer relative"
-                whileHover={{ 
-                  y: -10,
-                  scale: 1.02,
-                  transition: { type: "spring", stiffness: 300 }
-                }}
+              <div
+                className="h-full flex flex-col bg-slate-800/40 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-700/50 shadow-xl hover:shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-2"
                 onClick={() => handleOpenModal(project)}
               >
                 {/* Image Container */}
-                <div className="relative overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  
-                  {/* Overlay */}
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"
-                    initial={false}
-                  />
-                  
-                  {/* Hover Actions */}
-                  <motion.div 
-                    className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                    initial={false}
-                  >
+
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
+
+                  {/* Status Badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md border shadow-lg ${project.status === "Completed"
+                      ? "bg-green-500/20 text-green-400 border-green-500/30"
+                      : "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+                      }`}>
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* Desktop Hover Actions */}
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-900/60 backdrop-blur-[2px] hidden lg:flex">
                     <motion.button
-                      className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20 hover:bg-white/20 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleOpenModal(project);
+                      }}
+                      className="p-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 hover:border-cyan-400 transition-colors"
+                      title="View Details"
                     >
                       <FiEye className="text-xl" />
                     </motion.button>
                     <motion.button
-                      className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-white border border-white/20 hover:bg-white/20 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(project.github, '_blank');
                       }}
+                      className="p-3 bg-white/10 text-white rounded-full border border-white/20 hover:bg-white/20 hover:border-cyan-400 transition-colors"
+                      title="View Code"
                     >
                       <FiGithub className="text-xl" />
                     </motion.button>
-                  </motion.div>
-
-                  {/* Status Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${
-                      project.status === "Completed" 
-                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                        : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                    }`}>
-                      {project.status}
-                    </span>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.webapp, '_blank');
+                      }}
+                      className="p-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-full shadow-lg hover:shadow-cyan-500/50 transition-shadow"
+                      title="Live Demo"
+                    >
+                      <FiExternalLink className="text-xl" />
+                    </motion.button>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <FiExternalLink className="text-gray-400 group-hover:text-cyan-400 transition-colors flex-shrink-0 mt-1" />
+                <div className="p-6 flex-1 flex flex-col">
+                  {/* Title & Year */}
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-cyan-400 font-medium">{project.subtitle}</p>
+                    </div>
+                    <span className="text-xs font-mono text-slate-400 bg-slate-800/50 px-2 py-1 rounded border border-slate-700/50">
+                      {project.year}
+                    </span>
                   </div>
-                  
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">
+
+                  {/* Description */}
+                  <p className="text-slate-300 text-sm leading-relaxed mb-4 line-clamp-2 flex-grow">
                     {project.description}
                   </p>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                      <motion.span
-                        key={tagIndex}
-                        className="px-3 py-1 bg-slate-700/50 text-cyan-300 text-xs rounded-full border border-cyan-500/30"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 400 }}
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.slice(0, 3).map((tag, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-2 py-1 rounded-md bg-slate-700/40 text-slate-300 border border-slate-600/30"
                       >
                         {tag}
-                      </motion.span>
+                      </span>
                     ))}
                     {project.tags.length > 3 && (
-                      <span className="px-3 py-1 bg-slate-700/50 text-gray-400 text-xs rounded-full">
+                      <span className="text-xs px-2 py-1 rounded-md bg-slate-700/40 text-slate-400 border border-slate-600/30">
                         +{project.tags.length - 3}
                       </span>
                     )}
                   </div>
 
-                  {/* Features Preview */}
-                  <div className="flex items-center justify-between text-xs text-gray-400">
-                    <div className="flex items-center space-x-1">
-                      <FiCode />
-                      <span>{project.technologies?.length || project.tags.length} techs</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <FiLayers />
-                      <span>{project.features?.length || 4}+ features</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <FiStar />
-                      <span>{project.year}</span>
-                    </div>
+                  {/* Mobile Mobile Actions (Always Visible on Mobile/Tablet) */}
+                  <div className="flex gap-3 mt-auto lg:hidden">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-700/50 text-white text-sm font-medium border border-slate-600 hover:bg-slate-700 transition-colors"
+                    >
+                      <FiGithub /> Code
+                    </a>
+                    <a
+                      href={project.webapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-medium shadow-lg shadow-purple-900/20"
+                    >
+                      <FiExternalLink /> Live
+                    </a>
                   </div>
                 </div>
 
-                {/* Glow Effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  initial={false}
-                />
-              </motion.div>
-
-              {/* Floating Elements for Hovered Project */}
-              <AnimatePresence>
-                {hoveredProject === project.id && (
-                  <>
-                    <motion.div
-                      className="absolute -top-2 -right-2 w-4 h-4 bg-purple-500 rounded-full"
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0, opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 500 }}
-                    />
-                    <motion.div
-                      className="absolute -bottom-2 -left-2 w-3 h-3 bg-cyan-500 rounded-full"
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0, opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 500, delay: 0.1 }}
-                    />
-                  </>
-                )}
-              </AnimatePresence>
+                {/* Animated Border Gradient */}
+                <div className="absolute inset-0 border-2 border-transparent rounded-2xl bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -470,7 +453,7 @@ const Work = () => {
                     initial="hidden"
                     animate="visible"
                   />
-                  
+
                   {/* Image Navigation */}
                   {selectedProject.images && selectedProject.images.length > 1 && (
                     <>
@@ -490,18 +473,17 @@ const Work = () => {
                       >
                         <FiChevronRight />
                       </motion.button>
-                      
+
                       {/* Image Indicators */}
                       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                         {selectedProject.images.map((_, index) => (
                           <button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                              index === currentImageIndex
-                                ? "bg-cyan-400 w-4"
-                                : "bg-white/50 hover:bg-white/80"
-                            }`}
+                            className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex
+                              ? "bg-cyan-400 w-4"
+                              : "bg-white/50 hover:bg-white/80"
+                              }`}
                           />
                         ))}
                       </div>
@@ -526,11 +508,10 @@ const Work = () => {
                           {selectedProject.subtitle}
                         </p>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                        selectedProject.status === "Completed" 
-                          ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                          : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                      }`}>
+                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${selectedProject.status === "Completed"
+                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                        : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                        }`}>
                         {selectedProject.status}
                       </span>
                     </div>
@@ -593,7 +574,7 @@ const Work = () => {
                     )}
 
                     {/* Action Buttons */}
-                    <motion.div 
+                    <motion.div
                       className="flex gap-4"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}

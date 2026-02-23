@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { education } from "../../constants";
-import { 
-  FiBook, 
-  FiCalendar, 
-  FiMapPin, 
-  FiAward, 
+import {
+  FiBook,
+  FiCalendar,
+  FiMapPin,
+  FiAward,
   FiClock,
   FiChevronDown,
   FiExternalLink
@@ -15,7 +15,7 @@ const Education = () => {
   const [activeEducation, setActiveEducation] = useState(0);
   const [expandedCard, setExpandedCard] = useState(null);
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, threshold: 0.2 });
+  // const isInView = useInView(sectionRef, { once: true, threshold: 0.2 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -125,14 +125,14 @@ const Education = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,14 +141,14 @@ const Education = () => {
           >
             Academic Journey
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           />
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -160,7 +160,7 @@ const Education = () => {
         </motion.div>
 
         {/* Timeline Navigation */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap justify-center gap-4 mb-12"
           variants={containerVariants}
           initial="hidden"
@@ -172,11 +172,10 @@ const Education = () => {
               key={edu.id}
               variants={itemVariants}
               onClick={() => setActiveEducation(index)}
-              className={`flex items-center space-x-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border backdrop-blur-sm ${
-                activeEducation === index
-                  ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white border-transparent shadow-lg shadow-purple-500/25"
-                  : "bg-slate-800/50 text-gray-300 border-slate-700 hover:bg-slate-700/50 hover:text-white"
-              }`}
+              className={`flex items-center space-x-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border backdrop-blur-sm ${activeEducation === index
+                ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white border-transparent shadow-lg shadow-purple-500/25"
+                : "bg-slate-800/50 text-gray-300 border-slate-700 hover:bg-slate-700/50 hover:text-white"
+                }`}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -209,9 +208,8 @@ const Education = () => {
               <motion.div
                 key={edu.id}
                 variants={itemVariants}
-                className={`flex flex-col lg:flex-row items-center ${
-                  index % 2 === 0 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "lg:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Timeline Dot */}
                 <motion.div
@@ -220,17 +218,16 @@ const Education = () => {
                 />
 
                 {/* Content Card */}
-                <motion.div 
-                  className={`w-full lg:w-5/12 ${
-                    index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"
-                  }`}
+                <motion.div
+                  className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"
+                    }`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden">
                     {/* Header Section */}
                     <div className="flex items-start space-x-4 mb-6">
-                      <motion.div 
+                      <motion.div
                         className="w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
@@ -241,7 +238,7 @@ const Education = () => {
                           className="w-16 h-16 rounded-lg object-cover"
                         />
                       </motion.div>
-                      
+
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between mb-2">
                           <h3 className="text-xl font-bold text-white truncate">
@@ -254,11 +251,11 @@ const Education = () => {
                             {edu.status}
                           </motion.span>
                         </div>
-                        
+
                         <p className="text-cyan-400 font-semibold text-sm mb-1">
                           {edu.degree}
                         </p>
-                        
+
                         <div className="flex flex-wrap gap-4 text-xs text-gray-400 mt-2">
                           <div className="flex items-center space-x-1">
                             <FiMapPin className="text-purple-400" />
@@ -286,7 +283,7 @@ const Education = () => {
                     </div>
 
                     {/* Description */}
-                    <motion.p 
+                    <motion.p
                       className="text-gray-300 leading-relaxed mb-4 text-sm"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -344,7 +341,7 @@ const Education = () => {
 
                     {/* Progress Bar for Current Education */}
                     {edu.status === "Pursuing" && (
-                      <motion.div 
+                      <motion.div
                         className="mt-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -377,7 +374,7 @@ const Education = () => {
         </div>
 
         {/* Education Stats */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -390,21 +387,21 @@ const Education = () => {
             </div>
             <div className="text-gray-300">Degrees</div>
           </div>
-          
+
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 text-center">
             <div className="text-3xl font-bold text-cyan-400 mb-2">
               {education.filter(edu => edu.status === "Completed").length}
             </div>
             <div className="text-gray-300">Completed</div>
           </div>
-          
+
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 text-center">
             <div className="text-3xl font-bold text-green-400 mb-2">
               {education.filter(edu => edu.status === "Pursuing").length}
             </div>
             <div className="text-gray-300">In Progress</div>
           </div>
-          
+
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 text-center">
             <div className="text-3xl font-bold text-yellow-400 mb-2">
               70.9%
@@ -414,7 +411,7 @@ const Education = () => {
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div 
+        <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -430,7 +427,7 @@ const Education = () => {
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <span>Let's Discuss Opportunities</span>
+            <span>Let&apos;s Discuss Opportunities</span>
             <FiExternalLink />
           </motion.button>
         </motion.div>

@@ -1,5 +1,5 @@
 // components/AdvancedNavbar.jsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
@@ -11,9 +11,9 @@ const AdvancedNavbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -22,7 +22,7 @@ const AdvancedNavbar = () => {
         }
         return false;
       });
-      
+
       if (current) setActiveSection(current);
     };
 
@@ -33,7 +33,7 @@ const AdvancedNavbar = () => {
   const handleMenuItemClick = (sectionId) => {
     setActiveSection(sectionId);
     setIsOpen(false);
-    
+
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -46,6 +46,7 @@ const AdvancedNavbar = () => {
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
+    { id: "education", label: "Education" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -69,8 +70,8 @@ const AdvancedNavbar = () => {
 
   const navVariants = {
     hidden: { y: -100, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: { duration: 0.6, ease: "easeOut" }
     }
@@ -98,16 +99,15 @@ const AdvancedNavbar = () => {
       variants={navVariants}
       initial="hidden"
       animate="visible"
-      className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 ${
-        isScrolled 
-          ? "bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-700/50" 
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 ${isScrolled
+        ? "bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-700/50"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             className="flex items-center space-x-3 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             onClick={() => handleMenuItemClick('home')}
@@ -127,11 +127,10 @@ const AdvancedNavbar = () => {
               <motion.button
                 key={item.id}
                 onClick={() => handleMenuItemClick(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-                  activeSection === item.id 
-                    ? "text-cyan-400" 
-                    : "text-gray-300 hover:text-white"
-                }`}
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${activeSection === item.id
+                  ? "text-cyan-400"
+                  : "text-gray-300 hover:text-white"
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -199,17 +198,16 @@ const AdvancedNavbar = () => {
                   <motion.button
                     key={item.id}
                     onClick={() => handleMenuItemClick(item.id)}
-                    className={`block w-full text-left px-4 py-3 rounded-xl transition-all duration-300 ${
-                      activeSection === item.id
-                        ? "bg-gradient-to-r from-purple-500/20 to-cyan-500/20 text-cyan-400 border border-cyan-400/30"
-                        : "text-gray-300 hover:text-white hover:bg-slate-800/50"
-                    }`}
+                    className={`block w-full text-left px-4 py-3 rounded-xl transition-all duration-300 ${activeSection === item.id
+                      ? "bg-gradient-to-r from-purple-500/20 to-cyan-500/20 text-cyan-400 border border-cyan-400/30"
+                      : "text-gray-300 hover:text-white hover:bg-slate-800/50"
+                      }`}
                     whileHover={{ x: 10 }}
                   >
                     {item.label}
                   </motion.button>
                 ))}
-                
+
                 {/* Mobile Social Links */}
                 <div className="flex justify-center space-x-4 pt-4 border-t border-slate-700/50">
                   {socialLinks.map((social, index) => (

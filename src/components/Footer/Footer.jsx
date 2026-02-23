@@ -1,12 +1,11 @@
 // components/AdvancedFooter.jsx
-import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FiGithub, 
-  FiLinkedin, 
-  FiTwitter, 
+import {
+  FiGithub,
+  FiLinkedin,
+  FiTwitter,
   FiMail,
-  FiHeart 
+  FiHeart
 } from "react-icons/fi";
 
 const AdvancedFooter = () => {
@@ -27,9 +26,9 @@ const AdvancedFooter = () => {
       title: "Connect",
       links: [
         { name: "GitHub", href: "https://github.com/dhirajyadav91", icon: <FiGithub /> },
-        { name: "LinkedIn", href: "https://linkedin.com/in/dhiraj-yadav91", icon: <FiLinkedin /> },
+        { name: "LinkedIn", href: "https://linkedin.com/in/dhirajyadav91", icon: <FiLinkedin /> },
         { name: "Twitter", href: "#", icon: <FiTwitter /> },
-        { name: "Email", href: "mailto:dhirajdhoni97@gmail.com", icon: <FiMail /> }
+        { name: "Email", href: "mailto:engineersdhiraj@gmail.com", icon: <FiMail /> }
       ]
     }
   ];
@@ -54,14 +53,14 @@ const AdvancedFooter = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
-          <motion.div 
+          <motion.div
             className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <motion.div 
+            <motion.div
               className="flex items-center space-x-3"
               whileHover={{ scale: 1.05 }}
             >
@@ -74,14 +73,14 @@ const AdvancedFooter = () => {
               </div>
             </motion.div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
-              Crafting digital experiences with modern technologies and innovative solutions. 
-              Let's build something amazing together.
+              Crafting digital experiences with modern technologies and innovative solutions.
+              Let&apos;s build something amazing together.
             </p>
           </motion.div>
 
           {/* Links Sections */}
           {footerSections.map((section, index) => (
-            <motion.div 
+            <motion.div
               key={section.title}
               className="space-y-4"
               initial={{ opacity: 0, y: 20 }}
@@ -130,7 +129,7 @@ const AdvancedFooter = () => {
         </div>
 
         {/* Bottom Section */}
-        <motion.div 
+        <motion.div
           className="pt-8 border-t border-slate-700/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -169,7 +168,7 @@ const AdvancedFooter = () => {
         </motion.div>
 
         {/* CTA Button */}
-        <motion.div 
+        <motion.div
           className="text-center mt-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

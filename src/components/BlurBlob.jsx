@@ -1,9 +1,8 @@
 // components/EnhancedBlurBlob.jsx
-import React from 'react';
 import { motion } from 'framer-motion';
 
-const EnhancedBlurBlob = ({ 
-  position = { top: '50%', left: '50%' }, 
+const EnhancedBlurBlob = ({
+  position = { top: '50%', left: '50%' },
   size = { width: '400px', height: '400px' },
   color = 'purple',
   delay = 0,

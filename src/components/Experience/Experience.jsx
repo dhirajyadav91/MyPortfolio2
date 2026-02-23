@@ -1,5 +1,4 @@
 // components/AdvancedExperience.jsx
-import React from "react";
 import { motion } from "framer-motion";
 import { experiences } from "../../constants";
 
@@ -17,14 +16,14 @@ const AdvancedExperience = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -33,14 +32,14 @@ const AdvancedExperience = () => {
           >
             Professional Journey
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           ></motion.div>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -61,9 +60,8 @@ const AdvancedExperience = () => {
             {experiences.map((experience, index) => (
               <motion.div
                 key={experience.id}
-                className={`flex flex-col lg:flex-row items-center ${
-                  index % 2 === 0 ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "lg:flex-row-reverse" : ""
+                  }`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -73,10 +71,9 @@ const AdvancedExperience = () => {
                 <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full border-4 border-slate-900 z-20"></div>
 
                 {/* Content Card */}
-                <motion.div 
-                  className={`w-full lg:w-5/12 ${
-                    index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"
-                  }`}
+                <motion.div
+                  className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"
+                    }`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >

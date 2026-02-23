@@ -1,16 +1,16 @@
 // src/components/Contact/AdvancedContact.jsx
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
-  FiSend, 
-  FiGithub, 
-  FiLinkedin, 
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiSend,
+  FiGithub,
+  FiLinkedin,
   FiTwitter,
   FiMessageCircle,
   FiClock,
@@ -56,7 +56,7 @@ const AdvancedContact = () => {
             subject: "",
             message: ""
           });
-          
+
           toast.success("🎉 Message sent successfully! I'll get back to you within 24 hours.", {
             position: "top-right",
             autoClose: 5000,
@@ -91,8 +91,8 @@ const AdvancedContact = () => {
     {
       icon: <FiMail className="text-xl" />,
       title: "Email",
-      value: "dhirajdhoni97@gmail.com",
-      link: "mailto:dhirajdhoni97@gmail.com",
+      value: "engineersdhiraj@gmail.com",
+      link: "mailto:engineersdhiraj@gmail.com",
       description: "I'll respond within 24 hours"
     },
     {
@@ -122,7 +122,7 @@ const AdvancedContact = () => {
     {
       icon: <FiLinkedin />,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/dhiraj-yadav91",
+      url: "https://linkedin.com/in/dhirajyadav91",
       color: "hover:text-blue-400",
       description: "Professional network"
     },
@@ -168,43 +168,43 @@ const AdvancedContact = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Let's Work Together
+            Let&apos;s Work Together
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           ></motion.div>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            Ready to bring your ideas to life? Let's discuss your project and create something amazing together.
+            Ready to bring your ideas to life? Let&apos;s discuss your project and create something amazing together.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-1 space-y-8"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -218,7 +218,7 @@ const AdvancedContact = () => {
                 Get In Touch
               </h3>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's start a conversation!
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let&apos;s start a conversation!
               </p>
 
               {/* Contact Details */}
@@ -289,7 +289,7 @@ const AdvancedContact = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -298,12 +298,12 @@ const AdvancedContact = () => {
           >
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
               <h3 className="text-2xl font-bold text-white mb-2">Send a Message</h3>
-              <p className="text-gray-400 mb-8">Let's start a conversation about your project</p>
+              <p className="text-gray-400 mb-8">Let&apos;s start a conversation about your project</p>
 
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name Field */}
-                  <motion.div 
+                  <motion.div
                     className="relative"
                     whileFocus={{ scale: 1.02 }}
                   >
@@ -324,7 +324,7 @@ const AdvancedContact = () => {
                     />
                     <AnimatePresence>
                       {activeField === 'name' && (
-                        <motion.div 
+                        <motion.div
                           className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500"
                           initial={{ scaleX: 0 }}
                           animate={{ scaleX: 1 }}
@@ -336,7 +336,7 @@ const AdvancedContact = () => {
                   </motion.div>
 
                   {/* Email Field */}
-                  <motion.div 
+                  <motion.div
                     className="relative"
                     whileFocus={{ scale: 1.02 }}
                   >
@@ -357,7 +357,7 @@ const AdvancedContact = () => {
                     />
                     <AnimatePresence>
                       {activeField === 'email' && (
-                        <motion.div 
+                        <motion.div
                           className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500"
                           initial={{ scaleX: 0 }}
                           animate={{ scaleX: 1 }}
@@ -370,7 +370,7 @@ const AdvancedContact = () => {
                 </div>
 
                 {/* Subject Field */}
-                <motion.div 
+                <motion.div
                   className="relative"
                   whileFocus={{ scale: 1.02 }}
                 >
@@ -391,7 +391,7 @@ const AdvancedContact = () => {
                   />
                   <AnimatePresence>
                     {activeField === 'subject' && (
-                      <motion.div 
+                      <motion.div
                         className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
@@ -403,7 +403,7 @@ const AdvancedContact = () => {
                 </motion.div>
 
                 {/* Message Field */}
-                <motion.div 
+                <motion.div
                   className="relative"
                   whileFocus={{ scale: 1.02 }}
                 >
@@ -424,7 +424,7 @@ const AdvancedContact = () => {
                   />
                   <AnimatePresence>
                     {activeField === 'message' && (
-                      <motion.div 
+                      <motion.div
                         className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
@@ -461,7 +461,7 @@ const AdvancedContact = () => {
         </div>
 
         {/* Call to Action */}
-        <motion.div 
+        <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

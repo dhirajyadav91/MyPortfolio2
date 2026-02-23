@@ -1,18 +1,15 @@
 // src/components/Skills/VisualSkills.jsx
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { SkillsInfo } from "../../constants";
-import { 
-  FiCode, 
-  FiDatabase, 
-  FiTool, 
-  FiCloud, 
-  FiCpu, 
+import {
+  FiCode,
+  FiDatabase,
+  FiTool,
+  FiCloud,
+  FiCpu,
   FiLayers,
-  FiTrendingUp,
-  FiAward,
-  FiStar,
-  FiZap
+  FiTrendingUp
 } from "react-icons/fi";
 
 const VisualSkills = () => {
@@ -47,7 +44,7 @@ const VisualSkills = () => {
       "Node.js": 90, "Express.js": 88, "Python": 85, "Java": 80, "PHP": 75,
       "MongoDB": 87, "PostgreSQL": 83, "MySQL": 85, "Redis": 78,
       // Tools
-      "Git": 92, "Docker": 85, "AWS": 82, "Firebase": 80, "Figma": 78,
+      "Git": 92, "Docker": 85, "AWS": 82, "Firebase": 80, "Stich": 78,
       // Add more skills as needed
     };
     return levels[skillName] || Math.floor(Math.random() * 30) + 70;
@@ -70,7 +67,7 @@ const VisualSkills = () => {
       };
     });
 
-    const pathData = points.map((point, i) => 
+    const pathData = points.map((point, i) =>
       `${i === 0 ? 'M' : 'L'} ${point.x} ${point.y}`
     ).join(' ') + ' Z';
 
@@ -89,7 +86,7 @@ const VisualSkills = () => {
               strokeWidth="1"
             />
           ))}
-          
+
           {/* Axis lines */}
           {angles.map((angle, i) => (
             <line
@@ -102,7 +99,7 @@ const VisualSkills = () => {
               strokeWidth="1"
             />
           ))}
-          
+
           {/* Skill points and labels */}
           {points.map((point, i) => (
             <g key={i}>
@@ -125,7 +122,7 @@ const VisualSkills = () => {
               </text>
             </g>
           ))}
-          
+
           {/* Skill area */}
           <motion.path
             d={pathData}
@@ -137,7 +134,7 @@ const VisualSkills = () => {
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
           />
-          
+
           <defs>
             <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#8b5cf6" />
@@ -145,14 +142,14 @@ const VisualSkills = () => {
             </linearGradient>
           </defs>
         </svg>
-        
+
         {/* Skill labels around radar */}
         {skills.map((skill, i) => {
           const angle = angles[i];
           const labelRadius = radius + 25;
           const x = center + labelRadius * Math.cos(angle - Math.PI / 2);
           const y = center + labelRadius * Math.sin(angle - Math.PI / 2);
-          
+
           return (
             <motion.div
               key={skill.name}
@@ -298,13 +295,12 @@ const VisualSkills = () => {
               {skillLevels[levelIndex]?.map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    levelIndex === 4 ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg" :
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${levelIndex === 4 ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg" :
                     levelIndex === 3 ? "bg-purple-500/80 text-white" :
-                    levelIndex === 2 ? "bg-purple-400/60 text-white" :
-                    levelIndex === 1 ? "bg-purple-300/40 text-gray-300" :
-                    "bg-slate-700/50 text-gray-400"
-                  }`}
+                      levelIndex === 2 ? "bg-purple-400/60 text-white" :
+                        levelIndex === 1 ? "bg-purple-300/40 text-gray-300" :
+                          "bg-slate-700/50 text-gray-400"
+                    }`}
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 + levelIndex * 0.1 }}
@@ -339,11 +335,10 @@ const VisualSkills = () => {
               <motion.button
                 key={type}
                 onClick={() => setVizType(type)}
-                className={`px-3 py-1 rounded-lg text-xs font-medium capitalize transition-all ${
-                  vizType === type
-                    ? "bg-cyan-600 text-white"
-                    : "bg-slate-700 text-gray-400 hover:text-white"
-                }`}
+                className={`px-3 py-1 rounded-lg text-xs font-medium capitalize transition-all ${vizType === type
+                  ? "bg-cyan-600 text-white"
+                  : "bg-slate-700 text-gray-400 hover:text-white"
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -404,14 +399,14 @@ const VisualSkills = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -420,14 +415,14 @@ const VisualSkills = () => {
           >
             Technical Mastery
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           />
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -439,7 +434,7 @@ const VisualSkills = () => {
         </motion.div>
 
         {/* Category Navigation */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap justify-center gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -450,11 +445,10 @@ const VisualSkills = () => {
             <motion.button
               key={category.title}
               onClick={() => setActiveCategory(index)}
-              className={`flex items-center space-x-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border backdrop-blur-sm ${
-                activeCategory === index
-                  ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white border-transparent shadow-lg shadow-purple-500/25"
-                  : "bg-slate-800/50 text-gray-300 border-slate-700 hover:bg-slate-700/50 hover:text-white"
-              }`}
+              className={`flex items-center space-x-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border backdrop-blur-sm ${activeCategory === index
+                ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white border-transparent shadow-lg shadow-purple-500/25"
+                : "bg-slate-800/50 text-gray-300 border-slate-700 hover:bg-slate-700/50 hover:text-white"
+                }`}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -489,7 +483,7 @@ const VisualSkills = () => {
                 {categoryIcons[SkillsInfo[activeCategory]?.title]}
                 <span className="ml-3">{SkillsInfo[activeCategory]?.title}</span>
               </h3>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {SkillsInfo[activeCategory]?.skills.map((skill, index) => {
                   const level = getSkillLevel(skill.name);

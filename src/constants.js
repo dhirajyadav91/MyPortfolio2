@@ -10,16 +10,19 @@ import cssLogo from './assets/tech_logo/css.png';
 import sassLogo from './assets/tech_logo/sass.png';
 import javascriptLogo from './assets/tech_logo/javascript.png';
 import reactjsLogo from './assets/tech_logo/reactjs.png';
+import reactnativeLogo from './assets/tech_logo/reactnative.png';
+import expoLogo from './assets/tech_logo/expo.png';
 import reduxLogo from './assets/tech_logo/redux.png';
 import tailwindcssLogo from './assets/tech_logo/tailwindcss.png';
-import gsapLogo from './assets/tech_logo/gsap.png';
+// import gsapLogo from './assets/tech_logo/gsap.png';
 import materialuiLogo from './assets/tech_logo/materialui.png';
 import bootstrapLogo from './assets/tech_logo/bootstrap.png';
 
 // Backend Technologies
 import nodejsLogo from './assets/tech_logo/nodejs.png';
 import expressjsLogo from './assets/tech_logo/express.png';
-import mongodbLogo from './assets/tech_logo/mongodb.png';
+// import mongodbLogo from './assets/tech_logo/mongodb.png'; // Replaced by PostgreSQL in skills
+import postgresqlLogo from './assets/tech_logo/postgre.png';
 import firebaseLogo from './assets/tech_logo/firebase.png';
 
 // Programming Languages
@@ -35,30 +38,30 @@ import postmanLogo from './assets/tech_logo/postman.png';
 import mcLogo from './assets/tech_logo/mc.png';
 import netlifyLogo from './assets/tech_logo/netlify.png';
 import vercelLogo from './assets/tech_logo/vercel.png';
+import awsLogo from './assets/tech_logo/aws.png';
+import androidStudioLogo from './assets/tech_logo/androidstudio.png';
+import renderLogo from './assets/tech_logo/vercel.png'; // Using vercel as fallback for render
 
 // ==============================
 // EXPERIENCE SECTION LOGOS
 // ==============================
-import webverseLogo from './assets/company_logo/webverse_logo.png';
-import agcLogo from './assets/company_logo/agc_logo.png';
-import newtonschoolLogo from './assets/company_logo/newtonschool_logo.png';
 
 // ==============================
 // EDUCATION SECTION LOGOS
 // ==============================
-import glaLogo from './assets/education_logo/ambalika.png';
+// import glaLogo from './assets/education_logo/ambalika.png';
 import bsaLogo from './assets/education_logo/ambalika.png';
 import vpsLogo from './assets/education_logo/pic10.png';
 
 // ==============================
 // PROJECT SECTION LOGOS
 // ==============================
-import WetubeLogo from './assets/work_logo/p1tube.png';
-import LucyAILogo from './assets/work_logo/p5webBuilder.png';
-import ShoplxLogo from './assets/work_logo/p3shop.png';
-import IchatsLogo from './assets/work_logo/p4chat.png';
-import WebBuilderAILogo from './assets/work_logo/p5webBuilder.png';
-import ShortlinkerLogo from './assets/work_logo/p6shortlinker.png';
+import CoperateERPLogo from './assets/work_logo/erpimage.png';
+import WebBuilderAILogo from './assets/work_logo/webbuilder-image.png';
+import ShoplxLogo from './assets/work_logo/shoplx-image.png';
+import SensenovaLogo from './assets/work_logo/sensenova-image.png';
+import ShortlinkerLogo from './assets/work_logo/shortlinker-image.png';
+import ChatAppLogo from './assets/work_logo/ichat-image.png';
 
 // ==============================
 // SKILLS INFORMATION
@@ -71,73 +74,89 @@ export const SkillsInfo = [
     icon: '💻',
     description: 'Modern frontend technologies and frameworks for building responsive user interfaces',
     skills: [
-      { 
-        name: 'HTML', 
-        logo: htmlLogo, 
+      {
+        name: 'HTML',
+        logo: htmlLogo,
         proficiency: 95,
         category: 'Markup',
         years: 3,
         description: 'Semantic HTML5, Accessibility, SEO Optimization'
       },
-      { 
-        name: 'CSS', 
-        logo: cssLogo, 
+      {
+        name: 'CSS',
+        logo: cssLogo,
         proficiency: 90,
         category: 'Styling',
         years: 3,
         description: 'Flexbox, Grid, Animations, Responsive Design'
       },
-      { 
-        name: 'SASS', 
-        logo: sassLogo, 
+      {
+        name: 'SASS',
+        logo: sassLogo,
         proficiency: 85,
         category: 'Preprocessor',
         years: 2,
         description: 'Variables, Mixins, Functions, Modular Architecture'
       },
-      { 
-        name: 'JavaScript', 
-        logo: javascriptLogo, 
+      {
+        name: 'JavaScript',
+        logo: javascriptLogo,
         proficiency: 88,
         category: 'Programming',
         years: 3,
         description: 'ES6+, Async/Await, DOM Manipulation, APIs'
       },
-      { 
-        name: 'React JS', 
-        logo: reactjsLogo, 
+      {
+        name: 'React JS',
+        logo: reactjsLogo,
         proficiency: 92,
-        category: 'Framework',
+        category: 'Library',
         years: 2,
         description: 'Hooks, Context API, Component Lifecycle, Performance'
       },
-      { 
-        name: 'Redux', 
-        logo: reduxLogo, 
+      {
+        name: 'React Native',
+        logo: reactnativeLogo,
+        proficiency: 75,
+        category: 'Framework',
+        years: 1,
+        description: 'Mobile Development, Components, Navigation, State Management'
+      },
+      {
+        name: 'Expo Framework',
+        logo: expoLogo,
+        proficiency: 75,
+        category: 'Framework',
+        years: 1,
+        description: 'Mobile Development, Components, Navigation, State Management'
+      },
+      {
+        name: 'Redux',
+        logo: reduxLogo,
         proficiency: 80,
         category: 'State Management',
         years: 2,
         description: 'Store, Actions, Reducers, Middleware, Toolkit'
       },
-      { 
-        name: 'Tailwind CSS', 
-        logo: tailwindcssLogo, 
+      {
+        name: 'Tailwind CSS',
+        logo: tailwindcssLogo,
         proficiency: 85,
         category: 'CSS Framework',
         years: 2,
         description: 'Utility-first, Responsive, Customization, Plugins'
       },
-      { 
-        name: 'Material UI', 
-        logo: materialuiLogo, 
+      {
+        name: 'Material UI',
+        logo: materialuiLogo,
         proficiency: 78,
         category: 'UI Framework',
         years: 1,
         description: 'Material Design, Components, Theming, Customization'
       },
-      { 
-        name: 'Bootstrap', 
-        logo: bootstrapLogo, 
+      {
+        name: 'Bootstrap',
+        logo: bootstrapLogo,
         proficiency: 82,
         category: 'CSS Framework',
         years: 2,
@@ -151,33 +170,33 @@ export const SkillsInfo = [
     icon: '⚙️',
     description: 'Server-side technologies and databases for building robust applications',
     skills: [
-      { 
-        name: 'Node JS', 
-        logo: nodejsLogo, 
+      {
+        name: 'Node JS',
+        logo: nodejsLogo,
         proficiency: 85,
         category: 'Runtime',
         years: 2,
         description: 'Event Loop, Modules, NPM, File System, Streams'
       },
-      { 
-        name: 'Express JS', 
-        logo: expressjsLogo, 
+      {
+        name: 'Express JS',
+        logo: expressjsLogo,
         proficiency: 83,
         category: 'Framework',
         years: 2,
         description: 'Middleware, Routing, REST APIs, Error Handling'
       },
-      { 
-        name: 'MongoDB', 
-        logo: mongodbLogo, 
+      {
+        name: 'PostgreSQL',
+        logo: postgresqlLogo,
         proficiency: 80,
         category: 'Database',
         years: 2,
-        description: 'CRUD Operations, Aggregation, Indexing, Mongoose ODM'
+        description: 'CRUD Operations, Aggregation, Indexing'
       },
-      { 
-        name: 'Firebase', 
-        logo: firebaseLogo, 
+      {
+        name: 'Firebase',
+        logo: firebaseLogo,
         proficiency: 75,
         category: 'Platform',
         years: 1,
@@ -191,33 +210,33 @@ export const SkillsInfo = [
     icon: '🔤',
     description: 'Core programming languages and their ecosystems',
     skills: [
-      { 
-        name: 'Java', 
-        logo: javaLogo, 
+      {
+        name: 'Java',
+        logo: javaLogo,
         proficiency: 82,
         category: 'OOP',
         years: 3,
         description: 'OOP Concepts, Collections, Multithreading, Spring Basics'
       },
-      { 
-        name: 'Python', 
-        logo: pythonLogo, 
+      {
+        name: 'Python',
+        logo: pythonLogo,
         proficiency: 78,
         category: 'Scripting',
         years: 2,
         description: 'Data Structures, Libraries, Scripting, Automation'
       },
-      { 
-        name: 'JavaScript', 
-        logo: javascriptLogo, 
+      {
+        name: 'JavaScript',
+        logo: javascriptLogo,
         proficiency: 88,
         category: 'Web',
         years: 3,
         description: 'ES6+, Async Programming, Web APIs, Node.js'
       },
-      { 
-        name: 'TypeScript', 
-        logo: typescriptLogo, 
+      {
+        name: 'TypeScript',
+        logo: typescriptLogo,
         proficiency: 70,
         category: 'Typed',
         years: 1,
@@ -231,57 +250,90 @@ export const SkillsInfo = [
     icon: '🛠️',
     description: 'Development tools, version control, and deployment platforms',
     skills: [
-      { 
-        name: 'Git', 
-        logo: gitLogo, 
+      {
+        name: 'Git',
+        logo: gitLogo,
         proficiency: 90,
         category: 'Version Control',
         years: 3,
         description: 'Branching, Merging, Rebasing, Workflows'
       },
-      { 
-        name: 'GitHub', 
-        logo: githubLogo, 
+      {
+        name: 'GitHub',
+        logo: githubLogo,
         proficiency: 88,
         category: 'Platform',
         years: 3,
         description: 'Repositories, Pull Requests, Actions, Projects'
       },
-      { 
-        name: 'VS Code', 
-        logo: vscodeLogo, 
+      {
+        name: 'VS Code',
+        logo: vscodeLogo,
         proficiency: 92,
         category: 'IDE',
         years: 3,
         description: 'Extensions, Debugging, Integrated Terminal, Snippets'
       },
-      { 
-        name: 'Postman', 
-        logo: postmanLogo, 
+      {
+        name: 'Postman',
+        logo: postmanLogo,
         proficiency: 85,
         category: 'API Testing',
         years: 2,
         description: 'API Testing, Collections, Environments, Automation'
       },
-      { 
-        name: 'MongoDB Compass', 
-        logo: mcLogo, 
+
+      {
+        name: 'Aws',
+        logo: awsLogo,
+        proficiency: 82,
+        category: 'Deployment',
+        years: 2,
+        description: 'Backend Deployment, Server Functions'
+      },
+      {
+        name: 'MongoDB Compass',
+        logo: mcLogo,
         proficiency: 80,
         category: 'Database Tool',
         years: 2,
         description: 'Query Building, Data Visualization, Index Management'
       },
-      { 
-        name: 'Vercel', 
-        logo: vercelLogo, 
+      {
+        name: 'Android Studio',
+        logo: androidStudioLogo,
+        proficiency: 80,
+        category: 'IDE',
+        years: 2,
+        description: 'Android Development, Emulator, Debugging, Build Tools'
+      },
+      {
+        name: 'PgAdmin',
+        logo: postgresqlLogo,
+        proficiency: 80,
+        category: 'Database Tool',
+        years: 2,
+        description: 'Query Building, Data Visualization, Index Management'
+      },
+      {
+        name: 'Vercel',
+        logo: vercelLogo,
         proficiency: 82,
         category: 'Deployment',
         years: 2,
         description: 'Frontend Deployment, Serverless Functions, CI/CD'
       },
-      { 
-        name: 'Netlify', 
-        logo: netlifyLogo, 
+      {
+        name: 'Render',
+        logo: renderLogo,
+        proficiency: 82,
+        category: 'Deployment',
+        years: 2,
+        description: 'Backend Deployment, Server Functions'
+      },
+      {
+        name: 'Netlify',
+        logo: netlifyLogo,
         proficiency: 78,
         category: 'Deployment',
         years: 1,
@@ -298,7 +350,7 @@ export const SkillsInfo = [
 export const experiences = [
   {
     id: 1,
-    img: webverseLogo,
+    img: githubLogo, // Placeholder for apexlogo
     role: "Fullstack Developer",
     company: "Apexplanet",
     date: "June 2025 - Present",
@@ -313,11 +365,37 @@ export const experiences = [
       "Collaborated with design teams to create intuitive user experiences"
     ],
     skills: [
-      "HTML", "CSS", "JavaScript", "React JS", "Node JS", 
+      "HTML", "CSS", "JavaScript", "React JS", "Node JS",
       "Tailwind CSS", "MongoDB", "Redux", "Express.js", "REST APIs"
     ],
   },
+
+
+  {
+    id: 2,
+    img: githubLogo, // Placeholder for itriklogo
+    role: "Backend Developer",
+    company: "ItrikSofttech",
+    date: "January 2026 - Present",
+    duration: "Present",
+    location: "office",
+    type: "Full-time",
+    description: "Developed dynamic and scalable web applications using the Nodejs, handling backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
+    achievements: [
+      "Built 9+ full-stack applications using React.js and Node.js",
+      "Improved application performance by 60% through code optimization",
+      "Implemented responsive designs that work seamlessly across all devices",
+      "Collaborated with design teams to create intuitive user experiences"
+    ],
+    skills: [
+      "JavaScript", "Node JS", "PostgreSQL", "Prisma"
+      , "Express.js", "REST APIs", "Aws", "Postman", "Git", "GitHub"
+    ],
+  },
 ];
+
+
+
 
 // ==============================
 // EDUCATION DATA
@@ -357,7 +435,7 @@ export const education = [
     description: "Completed higher secondary education with focus on Physics, Chemistry, and Mathematics. Developed strong analytical and problem-solving skills through rigorous curriculum.",
     courses: [
       "Physics",
-      "Chemistry", 
+      "Chemistry",
       "Mathematics",
       "Computer Science"
     ],
@@ -388,146 +466,242 @@ export const education = [
 // ==============================
 // PROJECTS DATA
 // ==============================
-
 export const projects = [
   {
     id: 1,
-    title: "LucyAI (Agent)",
-    subtitle: "Intelligent AI Assistant",
-    description: "A sophisticated AI-powered assistant built with React.js and Node.js, integrated with Gemini AI for intelligent responses. Features natural language processing, context awareness, and multi-modal interactions.",
-    fullDescription: "LucyAI is an advanced conversational agent that leverages cutting-edge AI technology to provide intelligent assistance. The application features real-time chat, context preservation, and the ability to handle complex queries across various domains including coding, research, and general knowledge.",
-    image: LucyAILogo,
-    tags: ["React JS", "Node.js", "Express.js", "NPM", "Validation", "Gemini AI", "WebSocket"],
-    technologies: ["React", "Node.js", "Express", "Gemini API", "Socket.io", "JWT"],
-    features: [
-      "Real-time AI conversations",
-      "Context-aware responses", 
-      "Multi-modal interactions",
-      "User authentication",
-      "Chat history",
-      "Responsive design"
+    title: "Coperate ERP",
+    subtitle: "Enterprise Resource Planning System",
+    description:
+      "A comprehensive ERP system designed to manage core business operations including HR, finance, inventory, and sales in a centralized dashboard.",
+    fullDescription:
+      "Coperate ERP is a full-stack enterprise management solution that streamlines business processes across multiple departments. The platform includes modules for employee management, payroll processing, inventory tracking, sales monitoring, and role-based access control. Built with scalable architecture, it ensures data security, real-time analytics, and seamless performance for growing organizations.",
+    image: CoperateERPLogo,
+    tags: [
+      "React JS",
+      "Node.js",
+      "MongoDB",
+      "Dashboard",
+      "Role-Based Access",
+      "Analytics",
     ],
-    github: "https://github.com/dhirajyadav91/Ichat-f",
-    webapp: "https://ichat-f.vercel.app",
-    demo: "https://ichat-f.vercel.app/demo",
+    technologies: [
+      "React",
+      "Redux Toolkit",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Chart.js",
+    ],
+    features: [
+      "Employee & HR management",
+      "Inventory tracking system",
+      "Sales & revenue monitoring",
+      "Role-based access control",
+      "Analytics dashboard",
+      "Secure authentication system",
+    ],
+    github: "https://github.com/dhirajyadav91/coperate-erp",
+    webapp: "https://elixiontech.in",
     status: "Completed",
-    category: "AI/ML",
-    year: 2024
+    category: "Enterprise Software",
+    year: 2024,
   },
+
   {
     id: 2,
     title: "WebBuilderAI",
     subtitle: "AI-Powered Website Builder",
-    description: "An innovative platform that uses artificial intelligence to generate and customize websites automatically. Users can describe their requirements and the AI builds responsive, modern websites in minutes.",
-    fullDescription: "WebBuilderAI revolutionizes website creation by leveraging AI to understand user requirements and generate complete, responsive websites. The platform supports various templates, custom styling, and automatic optimization for different devices and platforms.",
+    description:
+      "An AI-driven platform that generates fully responsive and modern websites based on user prompts within minutes.",
+    fullDescription:
+      "WebBuilderAI leverages artificial intelligence to generate complete, production-ready websites based on user input. Users describe their business requirements, and the system dynamically builds layouts, components, and styling. It includes real-time preview, SEO optimization, and export functionality for deployment-ready code.",
     image: WebBuilderAILogo,
-    tags: ["React JS", "Node.js", "Express.js", "AI Integration", "Responsive Design", "Automation"],
-    technologies: ["React", "Node.js", "OpenAI API", "CSS3", "MongoDB", "Cloudinary"],
-    features: [
-      "AI-generated websites",
-      "Template customization",
-      "Responsive design",
-      "SEO optimization",
-      "Real-time preview",
-      "Export functionality"
+    tags: [
+      "React JS",
+      "Node.js",
+      "OpenAI API",
+      "Automation",
+      "Dynamic UI",
     ],
-    github: "https://github.com/dhirajyadav91/Ichat-f",
-    webapp: "https://ichat-f.vercel.app",
-    status: "In Progress",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "OpenAI API",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+    features: [
+      "AI-generated layouts",
+      "Dynamic component creation",
+      "Real-time preview",
+      "Responsive design automation",
+      "SEO-friendly structure",
+      "Exportable code",
+    ],
+    github: "https://github.com/dhirajyadav91/webbuilder-ai",
+    webapp: "https://webbuilder.elixintech.in",
+    status: "Completed",
     category: "AI/ML",
-    year: 2024
+    year: 2024,
   },
+
   {
     id: 3,
-    title: "Amazon Clone",
-    subtitle: "E-commerce Platform",
-    description: "A full-featured Amazon clone with product listings, shopping cart, user authentication, and payment integration. Built with modern React patterns and state management.",
-    fullDescription: "This Amazon clone replicates core e-commerce functionality including user registration, product browsing, detailed product pages, shopping cart management, wishlist, and simulated checkout process. The application demonstrates advanced React patterns and clean architecture.",
+    title: "Shoplx",
+    subtitle: "Modern E-commerce Platform",
+    description:
+      "A scalable e-commerce platform with product management, authentication, cart system, and checkout workflow.",
+    fullDescription:
+      "Shoplx is a modern full-stack e-commerce application inspired by enterprise-level marketplaces. It includes product browsing, advanced filtering, cart persistence, wishlist management, and secure checkout integration. Built with clean architecture and optimized state management for seamless performance.",
     image: ShoplxLogo,
-    tags: ["HTML", "CSS", "JavaScript", "React JS", "API Integration", "State Management"],
-    technologies: ["React", "Context API", "CSS3", "Fake Store API", "Local Storage"],
-    features: [
-      "User authentication",
-      "Product catalog",
-      "Shopping cart",
-      "Wishlist functionality",
-      "Search and filter",
-      "Responsive design"
+    tags: [
+      "React JS",
+      "Context API",
+      "E-commerce",
+      "Authentication",
+      "API Integration",
     ],
-    github: "https://github.com/dhirajyadav91/AmazKart-f",
-    webapp: "https://amaz-kart-f.vercel.app/",
+    technologies: [
+      "React",
+      "Context API",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Stripe API",
+    ],
+    features: [
+      "Product catalog management",
+      "Advanced search & filtering",
+      "Cart & wishlist system",
+      "Secure login & registration",
+      "Order placement workflow",
+      "Responsive UI design",
+    ],
+    github: "https://github.com/dhirajyadav91/shoplx",
+    webapp: "https://shoplx.elixintech.in",
     status: "Completed",
     category: "E-commerce",
-    year: 2024
+    year: 2024,
   },
+
   {
     id: 4,
-    title: "YouTube Clone",
-    subtitle: "Video Streaming Platform",
-    description: "A YouTube clone featuring video playback, channel subscriptions, comments, and personalized recommendations. Integrated with YouTube API for real content.",
-    fullDescription: "This YouTube clone provides a seamless video streaming experience with features like video playback, channel management, comment system, and personalized recommendations. The UI closely mimics YouTube's design while adding unique features.",
-    image: WetubeLogo,
-    tags: ["React JS", "Node.js", "MongoDB", "Express", "YouTube API", "Responsive Design"],
-    technologies: ["React", "Node.js", "MongoDB", "Express", "YouTube Data API", "JWT"],
-    features: [
-      "Video playback",
-      "Channel subscriptions",
-      "Comment system",
-      "Search functionality",
-      "Responsive player",
-      "User profiles"
+    title: "SensenovaAI",
+    subtitle: "AI-Powered Social Media Automation Tool",
+    description:
+      "An intelligent automation platform that helps businesses automate messaging, lead generation, and campaign workflows across social platforms.",
+    fullDescription:
+      "SensenovaAI is a social media automation tool similar to ManyChat. It enables businesses to create chatbot workflows, automate responses, capture leads, and manage marketing campaigns. The system integrates with messaging APIs and provides analytics dashboards for tracking engagement and conversions.",
+    image: SensenovaLogo,
+    tags: [
+      "React JS",
+      "Node.js",
+      "Automation",
+      "AI Chatbot",
+      "Marketing Tool",
     ],
-    github: "https://github.com/dhirajyadav91/Youtube-Clone-With-API",
-    webapp: "https://wetube-plum.vercel.app/",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.io",
+      "Meta API",
+    ],
+    features: [
+      "Automated chatbot workflows",
+      "Lead capture system",
+      "Campaign automation",
+      "Multi-platform integration",
+      "Analytics dashboard",
+      "Workflow builder UI",
+    ],
+    github: "https://github.com/yourusername/sensenova-ai",
+    webapp: "https://sensenova.in",
     status: "Completed",
-    category: "Media & Entertainment",
-    year: 2024
+    category: "Marketing Automation",
+    year: 2024,
   },
+
   {
     id: 5,
-    title: "Short Linker",
-    subtitle: "URL Shortening Service",
-    description: "A custom URL shortener service with analytics, custom slugs, and QR code generation. Tracks click analytics and provides detailed insights.",
-    fullDescription: "Short Linker is a comprehensive URL shortening platform that allows users to create custom short links, track click analytics, generate QR codes, and manage their links through an intuitive dashboard.",
+    title: "ShortLinker",
+    subtitle: "Advanced URL Shortening Service",
+    description:
+      "A scalable URL shortener with analytics tracking, QR code generation, and custom slug support.",
+    fullDescription:
+      "ShortLinker allows users to create custom short URLs, track click analytics, and generate QR codes. It features a dashboard for link management and performance monitoring. Built with scalable backend architecture and secure redirection handling.",
     image: ShortlinkerLogo,
-    tags: ["React JS", "API", "URL Shortening", "Analytics", "QR Codes", "Dashboard"],
-    technologies: ["React", "Node.js", "MongoDB", "Chart.js", "QR Code Generator"],
-    features: [
-      "URL shortening",
-      "Custom slugs",
-      "Click analytics",
-      "QR code generation",
-      "Link management",
-      "Dashboard"
+    tags: [
+      "React JS",
+      "Node.js",
+      "Analytics",
+      "QR Code",
+      "Dashboard",
     ],
-    github: "https://github.com/dhirajyadav91/LinkShorter-Frontend",
-    webapp: "https://link-shorter-frontend.vercel.app/",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Chart.js",
+      "NanoID",
+    ],
+    features: [
+      "Custom URL shortening",
+      "Click analytics tracking",
+      "QR code generation",
+      "Dashboard management",
+      "Secure redirection",
+      "Traffic insights visualization",
+    ],
+    github: "https://github.com/dhirajyadav91/shortlinker",
+    webapp: "https://shortlinker.elixintech.in",
     status: "Completed",
     category: "Tools & Utilities",
-    year: 2024
+    year: 2024,
   },
+
   {
     id: 6,
-    title: "WhatsApp Clone",
-    subtitle: "Real-time Messaging App",
-    description: "A real-time messaging application with chat rooms, media sharing, and online status. Built with modern web technologies for seamless communication.",
-    fullDescription: "This WhatsApp clone provides real-time messaging functionality with features like individual and group chats, media sharing, online status, message reactions, and push notifications.",
-    image: IchatsLogo,
-    tags: ["React JS", "Node.js", "Real-time", "WebSocket", "Media Sharing", "Authentication"],
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Cloudinary", "JWT"],
-    features: [
-      "Real-time messaging",
-      "Group chats",
-      "Media sharing",
-      "Online status",
-      "Message reactions",
-      "Push notifications"
+    title: "IChat",
+    subtitle: "Real-time Messaging Platform",
+    description:
+      "A scalable real-time chat application with private messaging, group chats, and media sharing.",
+    fullDescription:
+      "This real-time messaging platform enables seamless communication through private and group chats, media sharing, and online presence tracking. Built using WebSocket technology for low-latency messaging and secure authentication mechanisms.",
+    image: ChatAppLogo,
+    tags: [
+      "React JS",
+      "Node.js",
+      "WebSocket",
+      "Authentication",
+      "Media Sharing",
     ],
-    github: "https://github.com/dhirajyadav91/Ichat-f",
-    webapp: "https://ichat-f-c1yq.vercel.app",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "Socket.io",
+      "MongoDB",
+      "Cloudinary",
+      "JWT",
+    ],
+    features: [
+      "Instant real-time messaging",
+      "Group chat support",
+      "Media file sharing",
+      "Online/offline status tracking",
+      "Push notifications",
+      "Secure authentication",
+    ],
+    github: "https://github.com/dhirajyadav91/ichat",
+    webapp: "https://ichat.elixintech.in",
     status: "Completed",
     category: "Communication",
-    year: 2024
+    year: 2024,
   },
 ];
 
@@ -547,7 +721,7 @@ export const skillsSummary = {
 // Project categories for filtering
 export const projectCategories = [
   "All",
-  "AI/ML", 
+  "AI/ML",
   "E-commerce",
   "Media & Entertainment",
   "Tools & Utilities",

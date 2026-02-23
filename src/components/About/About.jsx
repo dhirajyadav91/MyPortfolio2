@@ -1,19 +1,20 @@
 // src/components/About/AdvancedAbout.jsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiDownload, FiAward, FiUsers, FiClock, FiCode, FiHeart } from "react-icons/fi";
+import profileImg from "../../assets/work_logo/p2my.png";
 
 const AdvancedAbout = () => {
   const [activeTab, setActiveTab] = useState('personal');
   const [currentText, setCurrentText] = useState(0);
-  
+
   const texts = ['Full-Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Tech Innovator'];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % texts.length);
     }, 3000);
-    
+
     return () => clearInterval(interval);
   }, [texts.length]);
 
@@ -28,9 +29,9 @@ const AdvancedAbout = () => {
     personal: {
       title: "Personal Journey",
       content: [
-        "I'm a passionate full-stack developer with over 1 years of experience creating digital solutions that make a difference. My journey began in college where I discovered my love for turning complex problems into elegant, user-friendly applications.",
-        "What drives me is the opportunity to create technology that improves people's lives. I believe in writing clean, maintainable code and designing intuitive user experiences that delight users.",
-        "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
+        "I,m a passionate full-stack developer with over 1 years of experience creating digital solutions that make a difference. My journey began in college where I discovered my love for turning complex problems into elegant, user-friendly applications.",
+        "What drives me is the opportunity to create technology that improves people&apos;s lives. I believe in writing clean, maintainable code and designing intuitive user experiences that delight users.",
+        "When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
       ]
     },
     professional: {
@@ -66,14 +67,14 @@ const AdvancedAbout = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +83,7 @@ const AdvancedAbout = () => {
           >
             About Me
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
@@ -100,21 +101,21 @@ const AdvancedAbout = () => {
             viewport={{ once: true }}
           >
             {/* Greeting */}
-            <motion.h3 
+            <motion.h3
               className="text-2xl md:text-3xl font-semibold text-gray-300 mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Hello, I'm{" "}
+              Hello, I&apos;m{" "}
               <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Dhiraj Yadav
               </span>
             </motion.h3>
 
             {/* Animated Title */}
-            <motion.div 
+            <motion.div
               className="text-3xl md:text-4xl font-bold text-white mb-6 h-12"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -141,11 +142,10 @@ const AdvancedAbout = () => {
                 <motion.button
                   key={tabKey}
                   onClick={() => setActiveTab(tabKey)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                    activeTab === tabKey
-                      ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg"
-                      : "bg-slate-800/50 text-gray-400 hover:text-white"
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeTab === tabKey
+                    ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg"
+                    : "bg-slate-800/50 text-gray-400 hover:text-white"
+                    }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -200,22 +200,25 @@ const AdvancedAbout = () => {
             </div>
 
             {/* CTA Buttons */}
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <motion.button
+              <motion.a
+                href="https://drive.google.com/file/d/1YiyMot8VzzPco4OZGcLY0GeHXjuWEuuP/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <FiDownload className="text-lg" />
                 <span>Download Resume</span>
-              </motion.button>
-              
+              </motion.a>
+
               <motion.button
                 className="flex items-center justify-center space-x-2 px-6 py-3 bg-slate-800/50 border border-slate-700 text-white font-semibold rounded-xl hover:bg-slate-700/50 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
@@ -223,7 +226,7 @@ const AdvancedAbout = () => {
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <FiHeart className="text-lg" />
-                <span>Let's Connect</span>
+                <span>Let&apos;s Connect</span>
               </motion.button>
             </motion.div>
           </motion.div>
@@ -243,14 +246,8 @@ const AdvancedAbout = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-full h-full bg-slate-900 rounded-3xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-48 h-48 bg-gradient-to-br from-purple-400 to-cyan-400 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold">
-                      DY
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">Dhiraj Yadav</h3>
-                    <p className="text-gray-400">Full Stack Developer</p>
-                  </div>
+                <div className="w-full h-full bg-slate-900 rounded-3xl overflow-hidden flex items-center justify-center">
+                  <img src={profileImg} alt="Dhiraj Yadav" className="w-full h-full object-cover" />
                 </div>
               </motion.div>
 
